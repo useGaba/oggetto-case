@@ -8,9 +8,16 @@ async function getUsers() {
   return users;
 }
 
-async function createUser({ email, password, name }) {
+async function createUser({
+  email, password, name, birthday, position, grade, workProject, phone,
+}) {
   password = hashPassword(password);
-  return await User.create({ email, password, name });
+  birthday = new Date(birthday);
+  const user = await User.create({
+    email, password, name, birthday, position, grade, workProject, phone,
+  });
+  user.password = undefined;
+  return user;
 }
 
 async function getUserById({ id }) {
@@ -19,11 +26,17 @@ async function getUserById({ id }) {
   return user;
 }
 
-async function updateUser({ params: { id }, body: { email, name } }) {
+async function updateUser({
+  params: { id }, body: {
+    email, name, birthday, position, grade, workProject, phone, hobbies, hardSkills, description,
+  },
+}) {
   const user = await User.findByPk(id);
   if (!user) throw new NotFound('no_user_in_base');
 
-  await user.update({ email, name });
+  await user.update({
+    email, name, birthday, position, grade, workProject, phone, hobbies, hardSkills, description,
+  });
 
   return user;
 }
