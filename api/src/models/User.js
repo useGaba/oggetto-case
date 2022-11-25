@@ -34,6 +34,30 @@ export default class User extends BaseModel {
       allowNull: false,
       protected: true,
     },
+    birthday: {
+      type: DataTypes.DATEONLY,
+    },
+    position: {
+      type: DataTypes.STRING,
+    },
+    grade: {
+      type: DataTypes.STRING,
+    },
+    workProject: {
+      type: DataTypes.STRING,
+    },
+    phone: {
+      type: DataTypes.STRING,
+    },
+    hobbies: {
+      type: DataTypes.ARRAY(DataTypes.STRING),
+    },
+    hardSkills: {
+      type: DataTypes.ARRAY(DataTypes.STRING),
+    },
+    description: {
+      type: DataTypes.STRING,
+    }
   };
 
   static Settings = {
