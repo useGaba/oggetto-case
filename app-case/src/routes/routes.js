@@ -1,5 +1,5 @@
 import MainPage from "../pages/MainPage";
-import AuthPage from "./../pages/AuthPage";
+import AuthPage from "../pages/AuthPage";
 
 export const publicRoutes = [
 	{
@@ -7,7 +7,11 @@ export const publicRoutes = [
 		component: <MainPage />,
 	},
 	{
-		path: "/auth",
+		path: "/",
+		component: <MainPage />,
+	},
+	{
+		path: "/login",
 		component: <AuthPage />,
 	},
 ];
