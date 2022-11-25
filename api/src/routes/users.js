@@ -10,7 +10,7 @@ const usersRouter = Router();
 usersRouter
   .get(
     '/',
-    // authenticateToken([roles.user, roles.admin]),
+    authenticateToken([roles.user, roles.admin]),
     wrap(async (req, res) => {
       const users = await UsersController.getUsers();
       res.json(users);
