@@ -2,6 +2,8 @@ import { Router } from 'express';
 
 import { wrap } from '../utils';
 import { AuthController } from '../controllers';
+import { authenticateToken } from '../middlewares';
+import { roles } from '../constants';
 
 const authRouter = Router();
 
@@ -15,6 +17,7 @@ authRouter
   )
   .post(
     '/registration',
+    authenticateToken([roles.admin]),
     wrap(async (req, res) => {
       const user = await AuthController.register(req.body);
       res.json(user);
