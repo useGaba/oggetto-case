@@ -1,4 +1,5 @@
 import MainPage from "../pages/MainPage";
+import AuthPage from "./../pages/AuthPage";
 
 export const publicRoutes = [
 	{
@@ -6,7 +7,7 @@ export const publicRoutes = [
 		component: <MainPage />,
 	},
 	{
-		path: "/",
-		component: <MainPage />,
+		path: "/auth",
+		component: <AuthPage />,
 	},
 ];
