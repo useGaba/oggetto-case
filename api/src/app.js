@@ -2,6 +2,7 @@ import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 import {authRouter, usersRouter} from "./routes";
+import {errorHandler} from "./middlewares";
 
 
 
@@ -21,5 +22,9 @@ app.use('/api/users', usersRouter)
 app.get('/health', (req, res) => {
   res.json({ ok: true });
 });
+
+
+app.use(errorHandler);
+
 
 export default app;
