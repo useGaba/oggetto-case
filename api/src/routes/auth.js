@@ -17,7 +17,7 @@ authRouter
   )
   .post(
     '/registration',
-    authenticateToken([roles.admin]),
+    // authenticateToken([roles.admin]),
     wrap(async (req, res) => {
       const user = await AuthController.register(req.body);
       res.json(user);

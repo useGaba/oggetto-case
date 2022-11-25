@@ -26,6 +26,31 @@ export async function up(queryInterface) {
       password: {
         type: DataTypes.STRING,
         allowNull: false,
+        protected: true,
+      },
+      birthday: {
+        type: DataTypes.DATEONLY,
+      },
+      position: {
+        type: DataTypes.STRING,
+      },
+      grade: {
+        type: DataTypes.STRING,
+      },
+      workProject: {
+        type: DataTypes.STRING,
+      },
+      phone: {
+        type: DataTypes.STRING,
+      },
+      hobbies: {
+        type: DataTypes.ARRAY(DataTypes.STRING),
+      },
+      hardSkills: {
+        type: DataTypes.ARRAY(DataTypes.STRING),
+      },
+      description: {
+        type: DataTypes.STRING,
       },
       createdAt: {
         type: DataTypes.DATE,

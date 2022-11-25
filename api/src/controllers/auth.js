@@ -1,4 +1,4 @@
-import { AlreadyExist, BadRequest } from 'http-errors';
+import { BadRequest } from 'http-errors';
 
 import { UsersController } from './index';
 import { User } from '../models';
@@ -16,10 +16,14 @@ async function login({ email, password }) {
   };
 }
 
-async function register({ email, password, name }) {
+async function register({
+  email, password, name, birthday, position, grade, workProject, phone,
+}) {
   let user = await User.findOne({ where: { email } });
-  if (user) throw new AlreadyExist('User already exist');
-  user = await UsersController.createUser({ email, password, name });
+  if (user) throw new BadRequest('User already exist');
+  user = await UsersController.createUser({
+    email, password, name, birthday, position, grade, workProject, phone,
+  });
   return user;
 }
 

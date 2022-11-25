@@ -57,7 +57,7 @@ export default class User extends BaseModel {
     },
     description: {
       type: DataTypes.STRING,
-    }
+    },
   };
 
   static Settings = {

@@ -8,9 +8,16 @@ async function getUsers() {
   return users;
 }
 
-async function createUser({ email, password, name }) {
+async function createUser({
+  email, password, name, birthday, position, grade, workProject, phone,
+}) {
   password = hashPassword(password);
-  return await User.create({ email, password, name });
+  birthday = new Date(birthday);
+  const user = await User.create({
+    email, password, name, birthday, position, grade, workProject, phone,
+  });
+  user.password = undefined;
+  return user;
 }
 
 async function getUserById({ id }) {
