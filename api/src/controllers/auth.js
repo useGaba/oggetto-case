@@ -2,7 +2,7 @@ import { AlreadyExist, BadRequest } from 'http-errors';
 
 import { UsersController } from './index';
 import { User } from '../models';
-import { comparePasswords, generateAccessToken, generateRefreshToken } from '../utils';
+import { comparePasswords, generateAccessToken } from '../utils';
 
 async function login({ email, password }) {
   const user = await User.findOneOrFail({ email });
@@ -13,7 +13,6 @@ async function login({ email, password }) {
 
   return {
     access: generateAccessToken(user.id, user.role),
-    refresh: generateRefreshToken(user.id, user.role),
   };
 }
 
@@ -24,9 +23,7 @@ async function register({ email, password, name }) {
   return user;
 }
 
-async function refresh() {
-
-}
+// TODO make reset password feature
 
 export {
   login,

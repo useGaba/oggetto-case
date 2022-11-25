@@ -15,7 +15,6 @@ async function createUser({ email, password, name }) {
 
 async function getUserById({ id }) {
   const user = await User.findByPk(id);
-  // TODO make findOrFail
   if (!user) throw new NotFound('no_user_in_base');
   return user;
 }
