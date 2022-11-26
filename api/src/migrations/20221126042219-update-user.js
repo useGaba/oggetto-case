@@ -10,6 +10,9 @@ export async function up(queryInterface) {
     await queryInterface.addColumn('users', 'office', {
       type: DataTypes.STRING,
     }, { transaction });
+    await queryInterface.addColumn('users', 'telegram', {
+      type: DataTypes.STRING,
+    }, { transaction });
     await transaction.commit();
   } catch (err) {
     await transaction.rollback();
@@ -22,6 +25,7 @@ export async function down(queryInterface) {
   try {
     await queryInterface.removeColumn('users', 'progress', { transaction });
     await queryInterface.removeColumn('users', 'office', { transaction });
+    await queryInterface.removeColumn('users', 'telegram', { transaction });
 
     await transaction.commit();
   } catch (err) {

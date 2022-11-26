@@ -65,6 +65,9 @@ export default class User extends BaseModel {
     office: {
       type: DataTypes.STRING,
     },
+    telegram: {
+      type: DataTypes.STRING,
+    },
   };
 
   static Settings = {

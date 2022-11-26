@@ -12,4 +12,5 @@ export const update = yup.object().required().shape({
   hobbies: yup.array().required(),
   hardSkills: yup.array().required(),
   description: yup.string().required(),
+  telegram: yup.string().required(),
 });

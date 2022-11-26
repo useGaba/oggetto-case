@@ -28,14 +28,14 @@ async function getUserById({ id }) {
 
 async function updateUser({
   params: { id }, body: {
-    email, name, birthday, position, grade, workProject, phone, hobbies, hardSkills, description,
+    email, name, birthday, position, grade, workProject, phone, hobbies, hardSkills, description, telegram,
   },
 }) {
   const user = await User.findByPk(id);
   if (!user) throw new NotFound('no_user_in_base');
 
   await user.update({
-    email, name, birthday, position, grade, workProject, phone, hobbies, hardSkills, description,
+    email, name, birthday, position, grade, workProject, phone, hobbies, hardSkills, description, telegram,
   });
 
   return user;
