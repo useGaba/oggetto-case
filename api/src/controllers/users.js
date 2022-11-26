@@ -48,10 +48,17 @@ async function deleteUser({ id }) {
   await user.destroy();
 }
 
+async function updateProgress({ params: { id }, body: { progress } }) {
+  const user = await User.findOneOrFail({ id });
+  user.progress = progress;
+  await user.save();
+}
+
 export {
   getUsers,
   createUser,
   updateUser,
   deleteUser,
   getUserById,
+  updateProgress,
 };

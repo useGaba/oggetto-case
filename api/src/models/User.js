@@ -58,6 +58,10 @@ export default class User extends BaseModel {
     description: {
       type: DataTypes.STRING,
     },
+    progress: {
+      type: DataTypes.STRING,
+      defaultValue: 1,
+    },
   };
 
   static Settings = {
