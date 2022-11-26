@@ -23,33 +23,6 @@ function MainPage() {
         </div>
       </header>
       <main className="main">
-        <section className="info">
-          <div className="info__content">
-            <div className="content-container">
-              <h1 className="title">
-                Классный заголовок придумаем завтра вместе
-              </h1>
-              <div className="sub-title">
-                Оджетто входит в ТОП-5 компаний России, создающих системы
-                электронной коммерции для крупных клиентов. Мы являемся 1-м
-                официальным партнером Magento в России и имеем 13 лет опыта на
-                рынках России, Европы и США. Обладатели таких наград, как
-                Рейтинг Рунета, UKRAINIAN E-COMMERCE AWARDS, ЗОЛОТОЙ САЙТ,
-                AWWARDS, CSSDesignAwards
-              </div>
-            </div>
-            <div className="images-container">
-              <img
-                className="images-container__img"
-                src={team}
-                alt="Наша команда"
-              />
-            </div>
-          </div>
-          <div className="info__button">
-            <img src={arrow} alt="вниз" />
-          </div>
-        </section>
         <section className="about">
           <div className="about__content">
             <h2 className="about__title">
@@ -98,6 +71,30 @@ function MainPage() {
               </div>
             </div>
           </div>
+        </section>
+        <section className="game">
+          <div className="logo">
+            <img src={logo} alt="лого" />
+          </div>
+          <div className="game__content">
+            <div className="game-container">
+              <div className="title">
+                Классный заголовок придумаем завтра 
+              </div>
+              <div className="title title-yellow">
+                 вместе
+              </div>
+              <div className="sub-title">
+                Оджетто входит в ТОП-5 компаний России, создающих системы
+                электронной коммерции для крупных клиентов. Мы являемся 1-м
+                официальным партнером Magento в России и имеем 13 лет опыта на
+                рынках России, Европы и США. Обладатели таких наград, как
+                Рейтинг Рунета, UKRAINIAN E-COMMERCE AWARDS, ЗОЛОТОЙ САЙТ,
+                AWWARDS, CSSDesignAwards
+              </div>
+            </div>
+          </div>
+          <button className="game__button">Просто тыкнуть</button>
         </section>
       </main>
     </div>
