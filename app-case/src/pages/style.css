@@ -1,0 +1,152 @@
+.page{
+  margin: 0 auto;
+  max-width: 1380px;
+  color:#565656;
+}
+
+.header{
+  font-weight: 500px;
+  font-family: 'Rubik';
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap:360px;
+  margin-bottom: 40px;
+}
+
+.info{
+  margin-bottom: 377px;
+}
+
+.header__items{
+  display: flex;
+  font-weight: 500;
+  gap: 60px;
+}
+
+.info__content{
+  display: flex;
+    position: relative;
+}
+
+.info__button{
+  position: relative;
+  top:200px;
+  width: 20px;
+  cursor: pointer;
+}
+
+.title{
+  font-weight: 700;
+  font-size: 48px;
+  max-width: 513px;
+  margin-bottom: 52px;
+}
+
+.sub-title{
+  font-size: 18px;
+  color: #828282;
+  max-width: 590px;
+}
+
+.images-container{
+  flex-grow: 1;
+  border-radius: 70px;
+  
+}
+
+.images-container::before{
+  content: "";
+  position: absolute;
+  left: 63.72%;
+  right: -5.39%; 
+  display: block;
+  height: 740px;
+  width: 570px;
+  background: linear-gradient(212.6deg, #FFDE09 6.38%, #FFE74C 88.95%);
+   border-top-left-radius: 70px;
+   border-bottom-left-radius: 70px;
+}
+.images-container::after {
+  content: "";
+  position: relative;
+  z-index: 3;
+  display: block;
+}
+
+
+.images-container__img{
+  width: 617px;
+  height: auto;
+  z-index: 2;
+  position: absolute;
+  top: 19.14%;
+  left: 50%;
+  border-radius: 5px;
+}
+
+.about{
+  position: relative;
+  padding: 240px 180px;
+  background-image: url('../assets//HoloSimulator.png');
+  background-repeat: no-repeat;
+  border-radius: 40px;
+}
+
+.about__content{
+
+}
+
+.about__content::before{
+  position: absolute;
+  left: 80%;
+  top:-2%;
+  display: block;
+  content: "";
+  height: 244px;
+  width: 244px;
+  background-image: url('../assets/ball.png');
+}
+
+.about__title{
+  font-weight: 700;
+  font-size: 36px;
+  max-width: 554px;
+}
+
+.card__items{
+  padding-top: 60px;
+  gap:80px;
+}
+
+.items{
+  display: flex;
+  align-items:flex-start;
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  gap:40px;
+}
+
+.card__title{
+  display: flex;
+  gap:20px;
+  align-items: center;
+}
+
+.card__order{
+  font-weight: 700;
+  font-size: 36px;
+  color: #FFDF15;
+}
+
+.card__name{
+  font-size: 24px;
+}
+
+.card__text{
+  font-size: 18px;
+  max-width: 410px;
+}
