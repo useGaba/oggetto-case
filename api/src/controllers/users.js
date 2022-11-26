@@ -3,13 +3,13 @@ import { User } from '../models';
 import { hashPassword } from '../utils';
 
 async function getUsers() {
-  const users = await User.findAll();
+  const users = await User.scope('data').findAll();
   if (!users) throw new NotFound('no_users_in_base');
   return users;
 }
 
 async function getRandomUser() {
-  const users = await User.findAll();
+  const users = await User.scope('data').findAll();
   if (!users) throw new NotFound('no_users_in_base');
 
   const randomIndex = Math.floor(Math.random() * users.length);
@@ -35,7 +35,16 @@ async function createUser({
   const hashedPassword = hashPassword(password);
   birthday = new Date(birthday);
   const user = await User.create({
-    email, password: hashedPassword, name, birthday, position, grade, workProject, phone, telegram, office,
+    email,
+    password: hashedPassword,
+    name,
+    birthday,
+    position,
+    grade,
+    workProject,
+    phone,
+    telegram,
+    office,
   });
   user.password = undefined;
   return user;
@@ -48,15 +57,28 @@ async function getUserById({ id }) {
 }
 
 async function updateUser({
-  params: { id }, body: {
-    email, name, birthday, position, grade, workProject, phone, hobbies, hardSkills, description, telegram, office,
+  params: { id },
+  body: {
+    email, name, birthday, position, grade,
+    workProject, phone, hobbies, hardSkills, description, telegram, office,
   },
 }) {
   const user = await User.findByPk(id);
   if (!user) throw new NotFound('no_user_in_base');
 
   await user.update({
-    email, name, birthday, position, grade, workProject, phone, hobbies, hardSkills, description, telegram, office,
+    email,
+    name,
+    birthday,
+    position,
+    grade,
+    workProject,
+    phone,
+    hobbies,
+    hardSkills,
+    description,
+    telegram,
+    office,
   });
 
   return user;
