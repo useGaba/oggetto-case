@@ -27,6 +27,14 @@ authRouter
       sendMail(req.body.email, 'registration', req.body);
       res.json(user);
     }),
+  )
+  .patch(
+    '/password',
+    authenticateToken([roles.user, roles.admin]),
+    wrap(async (req, res) => {
+      await AuthController.changePassword(req.user, req.body);
+      res.status(200).end();
+    }),
   );
 
 export { authRouter };

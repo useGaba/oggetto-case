@@ -2,7 +2,7 @@ import { BadRequest } from 'http-errors';
 
 import { UsersController } from './index';
 import { User } from '../models';
-import { comparePasswords, generateAccessToken } from '../utils';
+import { comparePasswords, generateAccessToken, hashPassword } from '../utils';
 
 async function login({ email, password }) {
   const user = await User.findOneOrFail({ email });
@@ -27,9 +27,17 @@ async function register({
   return user;
 }
 
-// TODO make reset password feature
+async function changePassword(user, { currentPassword, password }) {
+  const isPasswordCorrect = await comparePasswords(currentPassword, user.password);
+  if (!isPasswordCorrect) {
+    throw new BadRequest('invalid_password');
+  }
+  user.password = await hashPassword(password);
+  return user.save();
+}
 
 export {
   login,
   register,
+  changePassword,
 };

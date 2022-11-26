@@ -5,6 +5,8 @@ api/.env
 # dependencies
 /node_modules
 /app-case/node_modules
+/api/node_modules
+
 /.pnp
 .pnp.js
 
