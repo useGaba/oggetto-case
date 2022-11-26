@@ -18,7 +18,7 @@ async function getRandomUser() {
 
 async function getImportant() {
   const [director, leadHr, teamLead, projectManager] = await Promise.all([
-    User.findOneOrFail({ position: 'director' }),
+    User.findOneOrFail({ position: 'main mentor' }),
     User.findOneOrFail({ position: 'lead hr' }),
     User.findOneOrFail({ position: 'team lead' }),
     User.findOneOrFail({ position: 'project manager' }),
@@ -49,14 +49,14 @@ async function getUserById({ id }) {
 
 async function updateUser({
   params: { id }, body: {
-    email, name, birthday, position, grade, workProject, phone, hobbies, hardSkills, description, telegram,
+    email, name, birthday, position, grade, workProject, phone, hobbies, hardSkills, description, telegram, office,
   },
 }) {
   const user = await User.findByPk(id);
   if (!user) throw new NotFound('no_user_in_base');
 
   await user.update({
-    email, name, birthday, position, grade, workProject, phone, hobbies, hardSkills, description, telegram,
+    email, name, birthday, position, grade, workProject, phone, hobbies, hardSkills, description, telegram, office,
   });
 
   return user;
