@@ -3,20 +3,16 @@ import AuthPage from "../pages/AuthPage";
 import Donut from "../pages/Donut";
 
 export const publicRoutes = [
-  {
-    path: "/",
-    component: <MainPage />,
-  },
-  {
-    path: "/",
-    component: <MainPage />,
-  },
-  {
-    path: "/login",
-    component: <AuthPage />,
-  },
-  {
-    path: "/donut",
-    component: <Donut />,
-  },
+	{
+		path: "/",
+		component: <MainPage />,
+	},
+	{
+		path: "/login",
+		component: <AuthPage />,
+	},
+	{
+		path: "/donut",
+		component: <Donut />,
+	},
 ];
