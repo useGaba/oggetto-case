@@ -17,12 +17,12 @@ async function login({ email, password }) {
 }
 
 async function register({
-  email, password, name, birthday, position, grade, workProject, phone,
+  email, password, name, birthday, position, grade, workProject, phone, telegram, office,
 }) {
   let user = await User.findOne({ where: { email } });
   if (user) throw new BadRequest('User already exist');
   user = await UsersController.createUser({
-    email, password, name, birthday, position, grade, workProject, phone,
+    email, password, name, birthday, position, grade, workProject, phone, telegram, office,
   });
   return user;
 }
