@@ -1,7 +1,11 @@
-import { hobbies, projects, skills } from '../constants';
+import {
+  hobbies, projects, skills, office,
+} from '../constants';
 
 function getAppData() {
-  return { hobbies, projects, skills };
+  return {
+    hobbies, projects, skills, office,
+  };
 }
 
 export {

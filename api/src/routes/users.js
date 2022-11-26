@@ -4,7 +4,7 @@ import { wrap } from '../utils';
 import { UsersController } from '../controllers';
 import { roles } from '../constants';
 import { authenticateToken, validateRequest } from '../middlewares';
-import { progress, registration, update } from '../requests';
+import { progress, update } from '../requests';
 
 const usersRouter = Router();
 

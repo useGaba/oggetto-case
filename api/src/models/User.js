@@ -62,6 +62,9 @@ export default class User extends BaseModel {
       type: DataTypes.STRING,
       defaultValue: 1,
     },
+    office: {
+      type: DataTypes.STRING,
+    },
   };
 
   static Settings = {
