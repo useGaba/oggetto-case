@@ -1,152 +1,263 @@
-.page{
-  margin: 0 auto;
-  max-width: 1380px;
-  color:#565656;
+.page {
+	margin: 0 auto;
+	max-width: 1380px;
+	color: #565656;
 }
 
-.header{
-  font-weight: 500px;
-  font-family: 'Rubik';
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  gap:360px;
-  margin-bottom: 40px;
+.header {
+	font-weight: 500px;
+	font-family: "Rubik";
+	font-size: 16px;
+	display: flex;
+	align-items: center;
+	gap: 360px;
+	margin-bottom: 40px;
 }
 
-.info{
-  margin-bottom: 377px;
+.info {
+	margin-bottom: 377px;
 }
 
-.header__items{
-  display: flex;
-  font-weight: 500;
-  gap: 60px;
+/* TOPIC GOGA */
+.topic {
+	margin-bottom: 141px;
 }
 
-.info__content{
-  display: flex;
-    position: relative;
+.topic__content {
+	margin-left: 291px;
 }
 
-.info__button{
-  position: relative;
-  top:200px;
-  width: 20px;
-  cursor: pointer;
+.topic__content__info {
+	/* width: 800px; */
+	line-height: 100px;
 }
 
-.title{
-  font-weight: 700;
-  font-size: 48px;
-  max-width: 513px;
-  margin-bottom: 52px;
+.topic__content__title p {
+	margin: 0;
 }
 
-.sub-title{
-  font-size: 18px;
-  color: #828282;
-  max-width: 590px;
+.topic__content__title {
+	width: 80%;
+	color: black;
+	font-size: 5em;
+	margin: 0;
+	line-height: 65px;
+	margin-bottom: 60px;
+	font-weight: bold;
 }
 
-.images-container{
-  flex-grow: 1;
-  border-radius: 70px;
-  
+.topic__info {
+	width: 40%;
+	color: black;
 }
 
-.images-container::before{
-  content: "";
-  position: absolute;
-  left: 63.72%;
-  right: -5.39%; 
-  display: block;
-  height: 740px;
-  width: 570px;
-  background: linear-gradient(212.6deg, #FFDE09 6.38%, #FFE74C 88.95%);
-   border-top-left-radius: 70px;
-   border-bottom-left-radius: 70px;
+.topic__info p {
+	font-weight: bold;
+	line-height: normal;
+}
+
+.topic-btn__go {
+	width: 200px;
+	height: 70px;
+	background-color: black;
+	border-radius: 10px;
+	color: white;
+	font-weight: bold;
+}
+
+.btn__container {
+	width: 40%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.topic-btn__change__static-cards {
+	width: 200px;
+	height: 70px;
+	background-color: white;
+	border-radius: 10px;
+	color: black;
+	font-weight: bold;
+}
+
+.topic-btn__change__static-cards:hover {
+	background-color: black;
+	color: white;
+}
+
+.topic-btn__change__static-cards:active {
+	background-color: #ffe53b;
+	color: black;
+}
+
+.topic-btn__change_hover_cards {
+	width: 200px;
+	height: 70px;
+	background-color: black;
+	border-radius: 10px;
+	color: white;
+	font-weight: bold;
+}
+
+.topic-btn__change_hover_cards:hover {
+	background-color: white;
+	color: black;
+}
+
+.topic-btn__change_hover_cards:active {
+	background-color: #ffe53b;
+	color: black;
+}
+
+.topic-btn__go:hover {
+	background-color: #2a2a2a;
+}
+
+.topic-btn__go:active {
+	background-color: #ffde09;
+}
+
+.title {
+	font-weight: 700;
+	font-size: 48px;
+	max-width: 513px;
+	margin-bottom: 52px;
+}
+
+.sub-title {
+	font-size: 18px;
+	color: #828282;
+	max-width: 590px;
+}
+
+.images-container {
+	flex-grow: 1;
+	border-radius: 70px;
+}
+
+.images-container::before {
+	content: "";
+	position: absolute;
+	left: 63.72%;
+	right: -5.39%;
+	display: block;
+	height: 740px;
+	width: 570px;
+	background: linear-gradient(212.6deg, #ffde09 6.38%, #ffe74c 88.95%);
+	border-top-left-radius: 70px;
+	border-bottom-left-radius: 70px;
 }
 .images-container::after {
-  content: "";
-  position: relative;
-  z-index: 3;
-  display: block;
+	content: "";
+	position: relative;
+	z-index: 3;
+	display: block;
 }
 
-
-.images-container__img{
-  width: 617px;
-  height: auto;
-  z-index: 2;
-  position: absolute;
-  top: 19.14%;
-  left: 50%;
-  border-radius: 5px;
+.images-container__img {
+	width: 617px;
+	height: auto;
+	z-index: 2;
+	position: absolute;
+	top: 19.14%;
+	left: 50%;
+	border-radius: 5px;
 }
 
-.about{
-  position: relative;
-  padding: 240px 180px;
-  background-image: url('../assets//HoloSimulator.png');
-  background-repeat: no-repeat;
-  border-radius: 40px;
+.about {
+	position: absolute;
+	padding: 200px 180px;
+	background-image: url("../assets//HoloSimulator.png");
+	background-repeat: no-repeat;
+	border-radius: 40px;
 }
 
-.about__content{
-
+.about__content {
 }
 
-.about__content::before{
-  position: absolute;
-  left: 80%;
-  top:-2%;
-  display: block;
-  content: "";
-  height: 244px;
-  width: 244px;
-  background-image: url('../assets/ball.png');
+.about__content::before {
+	position: absolute;
+	left: 80%;
+	top: -2%;
+	display: block;
+	content: "";
+	height: 244px;
+	width: 244px;
+	background-image: url("../assets/ball.png");
 }
 
-.about__title{
-  font-weight: 700;
-  font-size: 36px;
-  max-width: 554px;
+.about__title {
+	font-weight: 700;
+	font-size: 36px;
+	max-width: 554px;
 }
 
-.card__items{
-  padding-top: 60px;
-  gap:80px;
+.about__cylinder__1 {
+	width: 204px;
+	height: 470px;
+	background: url("../assets//Cylinder-White-Glossy.png");
+	background-repeat: no-repeat;
+	object-fit: contain;
+	position: absolute;
+	bottom: 120px;
+	right: 0;
 }
 
-.items{
-  display: flex;
-  align-items:flex-start;
+.about__cylinder__2 {
+	width: 204px;
+	height: 470px;
+	background: url("../assets//Cylinder-White-Glossy_2.png");
+	background-repeat: no-repeat;
+	object-fit: contain;
+	position: absolute;
+	bottom: 120px;
+	left: -70px;
 }
 
-.card{
-  display: flex;
-  flex-direction: column;
-  gap:40px;
+.about__line__1 {
+	position: absolute;
+	width: 1519px;
+	height: 240px;
+	overflow: hidden;
+	left: -70px;
+	bottom: 0;
+}
+.about__line__2 {
 }
 
-.card__title{
-  display: flex;
-  gap:20px;
-  align-items: center;
+.card__items {
+	padding-top: 60px;
+	gap: 80px;
 }
 
-.card__order{
-  font-weight: 700;
-  font-size: 36px;
-  color: #FFDF15;
+.items {
+	display: flex;
+	align-items: flex-start;
 }
 
-.card__name{
-  font-size: 24px;
+.card {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
 }
 
-.card__text{
-  font-size: 18px;
-  max-width: 410px;
+.card__title {
+	display: flex;
+	gap: 20px;
+	align-items: center;
+}
+
+.card__order {
+	font-weight: 700;
+	font-size: 36px;
+	color: #ffdf15;
+}
+
+.card__name {
+	font-size: 24px;
+}
+
+.card__text {
+	font-size: 18px;
+	max-width: 410px;
 }

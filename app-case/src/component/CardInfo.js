@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Card from "@mui/material/Card";
 import { Button, CardActions, CardContent, Typography } from "@mui/material";
+import { sendInfo } from "./../api/services/infoUserService";
 
 export const CardInfo = () => {
 	const [fio, setFio] = useState("");
@@ -11,6 +12,11 @@ export const CardInfo = () => {
 	const [hobbies, setHobbies] = useState([]);
 	const [profSkills, setProffSkills] = useState([]);
 	const [aboutYourself, setAboutYourself] = useState("");
+
+	const sendInfoUser = async () => {
+		const data = await sendInfo();
+		console.log(data);
+	};
 
 	return (
 		<div className="" style={{ width: "500px" }}>
@@ -82,7 +88,9 @@ export const CardInfo = () => {
 					</div>
 				</CardContent>
 				<CardActions>
-					<Button size="small">Learn More</Button>
+					<Button variant="contained" color="success" onClick={sendInfoUser}>
+						Отправить
+					</Button>
 				</CardActions>
 			</Card>
 		</div>

@@ -8,7 +8,6 @@ export const App = () => {
 		<div className="app-wrapper">
 			<BrowserRouter>
 				<AppRoutes />
-				<CardInfo />
 			</BrowserRouter>
 		</div>
 	);
