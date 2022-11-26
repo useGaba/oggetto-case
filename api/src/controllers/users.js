@@ -11,10 +11,10 @@ async function getUsers() {
 async function createUser({
   email, password, name, birthday, position, grade, workProject, phone,
 }) {
-  password = hashPassword(password);
+  const hashedPassword = hashPassword(password);
   birthday = new Date(birthday);
   const user = await User.create({
-    email, password, name, birthday, position, grade, workProject, phone,
+    email, password: hashedPassword, name, birthday, position, grade, workProject, phone,
   });
   user.password = undefined;
   return user;
@@ -48,10 +48,17 @@ async function deleteUser({ id }) {
   await user.destroy();
 }
 
+async function updateProgress({ params: { id }, body: { progress } }) {
+  const user = await User.findOneOrFail({ id });
+  user.progress = progress;
+  await user.save();
+}
+
 export {
   getUsers,
   createUser,
   updateUser,
   deleteUser,
   getUserById,
+  updateProgress,
 };
