@@ -49,7 +49,56 @@ function DonutPage() {
           <div
             className={!isOpen ? "donut__card" : "donut__card donut__card-open"}
           >
-            {isOpen ? null : (
+            {isOpen ? (
+              <>
+                <div className="donut__card-content card-content">
+                  <div className="card-content__user ">
+                    <div className="card-content__img"></div>
+                    <div className="card-content__name">Мария Иванова</div>
+                  </div>
+                  <div className="card-content__info">
+                    <span className="card-content__text">Должность: </span>
+                    <span className="card-content__data">HR-менеджер</span>
+                  </div>
+                  <div className="card-content__info">
+                    <span className="card-content__text">Уровень: </span>
+                    <span className="card-content__data"></span>
+                  </div>
+                  <div className="card-content__info">
+                    <span className="card-content__text">Hard skills: </span>
+                    <span className="card-content__data"></span>
+                  </div>
+                  <div className="card-content__info">
+                    <span className="card-content__text">Дата рождения: </span>
+                    <span className="card-content__data"></span>
+                  </div>
+                  <div className="card-content__info">
+                    <span className="card-content__text">Хобби: </span>
+                    <span className="card-content__data"></span>
+                  </div>
+                  <div className="card-content__info">
+                    <span className="card-content__text">email: </span>
+                    <span className="card-content__data"></span>
+                  </div>
+                  <div className="card-content__info">
+                    <span className="card-content__text">Телефон: </span>
+                    <span className="card-content__data"></span>
+                  </div>
+                  <div className="card-content__info">
+                    <span className="card-content__text">
+                      Локация: Таганрогский офис, Петровская 89
+                    </span>
+                    <span className="card__data"></span>
+                  </div>
+                </div>
+                <a
+                  href="https://web.telegram.org"
+                  className="card-content__link"
+                >
+                  Написать в телеграмм
+                </a>
+              </>
+            ) : (
               <>
                 <div onClick={openPerson} className="donut__card-action">
                   <img src={flip} alt="" />
