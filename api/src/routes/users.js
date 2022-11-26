@@ -18,6 +18,22 @@ usersRouter
     }),
   )
   .get(
+    '/random',
+    authenticateToken([roles.user, roles.admin]),
+    wrap(async (req, res) => {
+      const users = await UsersController.getRandomUser();
+      res.json(users);
+    }),
+  )
+  .get(
+    '/important',
+    authenticateToken([roles.user, roles.admin]),
+    wrap(async (req, res) => {
+      const users = await UsersController.getImportant();
+      res.json(users);
+    }),
+  )
+  .get(
     '/:id',
     authenticateToken([roles.user, roles.admin]),
     wrap(async (req, res) => {

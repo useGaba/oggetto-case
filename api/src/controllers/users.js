@@ -8,13 +8,34 @@ async function getUsers() {
   return users;
 }
 
+async function getRandomUser() {
+  const users = await User.findAll();
+  if (!users) throw new NotFound('no_users_in_base');
+
+  const randomIndex = Math.floor(Math.random() * users.length);
+  return users[randomIndex];
+}
+
+async function getImportant() {
+  const [director, leadHr, teamLead, projectManager] = await Promise.all([
+    User.findOneOrFail({ position: 'main mentor' }),
+    User.findOneOrFail({ position: 'lead hr' }),
+    User.findOneOrFail({ position: 'team lead' }),
+    User.findOneOrFail({ position: 'project manager' }),
+  ]);
+
+  return {
+    director, leadHr, teamLead, projectManager,
+  };
+}
+
 async function createUser({
-  email, password, name, birthday, position, grade, workProject, phone,
+  email, password, name, birthday, position, grade, workProject, phone, telegram, office,
 }) {
   const hashedPassword = hashPassword(password);
   birthday = new Date(birthday);
   const user = await User.create({
-    email, password: hashedPassword, name, birthday, position, grade, workProject, phone,
+    email, password: hashedPassword, name, birthday, position, grade, workProject, phone, telegram, office,
   });
   user.password = undefined;
   return user;
@@ -28,14 +49,14 @@ async function getUserById({ id }) {
 
 async function updateUser({
   params: { id }, body: {
-    email, name, birthday, position, grade, workProject, phone, hobbies, hardSkills, description, telegram,
+    email, name, birthday, position, grade, workProject, phone, hobbies, hardSkills, description, telegram, office,
   },
 }) {
   const user = await User.findByPk(id);
   if (!user) throw new NotFound('no_user_in_base');
 
   await user.update({
-    email, name, birthday, position, grade, workProject, phone, hobbies, hardSkills, description, telegram,
+    email, name, birthday, position, grade, workProject, phone, hobbies, hardSkills, description, telegram, office,
   });
 
   return user;
@@ -61,4 +82,6 @@ export {
   deleteUser,
   getUserById,
   updateProgress,
+  getRandomUser,
+  getImportant,
 };

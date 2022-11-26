@@ -21,6 +21,12 @@ function MainPage() {
 				<div className="logo">
 					<img src={logo} alt="лого" />
 				</div>
+				<div className="header__items">
+					<div className="header__item">Функции</div>
+					<div className="header__item">Преимущества</div>
+					<div className="header__item">Как использовать</div>
+					<div className="header__item">Частые вопросы</div>
+				</div>
 			</header>
 			<main className="main">
 				{/* TOPIC GOGA */}
@@ -205,6 +211,26 @@ function MainPage() {
 						<img src={line_1}></img>
 					</div>
 					<div className="about__line__2"></div>
+				</section>
+				<section className="game">
+					<div className="logo">
+						<img src={logo} alt="лого" />
+					</div>
+					<div className="game__content">
+						<div className="game-container">
+							<div className="title">Классный заголовок придумаем завтра</div>
+							<div className="title title-yellow">вместе</div>
+							<div className="sub-title">
+								Оджетто входит в ТОП-5 компаний России, создающих системы
+								электронной коммерции для крупных клиентов. Мы являемся 1-м
+								официальным партнером Magento в России и имеем 13 лет опыта на
+								рынках России, Европы и США. Обладатели таких наград, как
+								Рейтинг Рунета, UKRAINIAN E-COMMERCE AWARDS, ЗОЛОТОЙ САЙТ,
+								AWWARDS, CSSDesignAwards
+							</div>
+						</div>
+					</div>
+					<button className="game__button">Просто тыкнуть</button>
 				</section>
 			</main>
 		</div>
