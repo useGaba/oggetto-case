@@ -5,11 +5,6 @@ import { useNavigate } from "react-router-dom";
 import line from "../assets/DecorativeLine1.png";
 
 import logo from "../assets/logo.svg";
-// import team from "../assets/team.png";
-// import arrow from "../assets/arrow.png";
-import bublic from "../assets/bublic.png";
-import cone from "../assets/cone.png";
-import cube from "../assets/cube.png";
 import photo1 from "../assets/photo1.png";
 import photo2 from "../assets/photo2.png";
 import photo3 from "../assets/photo3.png";
