@@ -1,19 +1,26 @@
-.flipped .content {
-	transform: rotateY(180deg);
-	transition: transform 0.5s;
-}
-
 .donut__card {
+	position: relative;
 	padding-top: 10px;
+	height: 640px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center;
 	border-radius: 24px;
 	box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
+/* @keyframes slide_down {
+	from {
+		top: inherit;
+	}
+	to {
+		bottom: -900px;
+	}
+} */
+
 .donut__card-open {
-	padding-top: 35px;
+	height: 100%;
 	transform: scale(1);
 	gap: 30px;
 }
@@ -30,9 +37,10 @@
 
 .donut__card {
 	width: 360px;
-	height: 480px;
+	height: 540px;
 	background-color: #fff;
 	z-index: 3;
+	position: relative;
 }
 
 .donut__card__wrapper {
@@ -41,12 +49,12 @@
 }
 
 .card__content {
+	height: 100%;
 	display: flex;
 	flex-grow: 1;
 	justify-content: center;
 	flex-direction: column;
 	align-items: center;
-	/* margin-bottom: 60px; */
 }
 
 .card-content__user {

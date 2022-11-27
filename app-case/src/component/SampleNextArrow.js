@@ -1,8 +1,8 @@
-import { BsArrowRight } from "react-icons/bs";
 import "../css/arrows.css";
+import next from "../assets/next.png";
 
 export const SampleNextArrow = ({ onClick }) => (
 	<div className="arrow arrow-right" onClick={onClick}>
-		<BsArrowRight />
+		<img src={next} alt="Next" />
 	</div>
 );

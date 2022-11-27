@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import "../css/onboarding.css";
 import "./cardStyle.css";
@@ -13,11 +12,13 @@ import man from "../assets/man.png";
 import manGray from "../assets/man-gray.png";
 import exit from "../assets/exit.png";
 import check from "../assets/check.png";
+import { useNavigate } from "react-router-dom";
 
 function Onboarding() {
 	const [donuts, setDonuts] = useState(0);
 
 	const [show, setShow] = useState(true);
+	const navigate = useNavigate();
 
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
@@ -41,7 +42,7 @@ function Onboarding() {
 							<div className="header-donut__text">Раздел 2 - Донат встречи</div>
 						</button>
 					</div>
-					<button className="exit-btn">
+					<button className="exit-btn" onClick={() => navigate("/")}>
 						<img src={exit} alt="" />
 					</button>
 				</div>
@@ -160,7 +161,12 @@ function Onboarding() {
 										Ты собрал все части пончика, отправляйся на следующий этап,
 										для того чтобы слопать его с коллегами.
 									</div>
-									<button className="modal__button">Погнали!</button>
+									<button
+										className="modal__button"
+										onClick={() => navigate("/donut")}
+									>
+										Погнали!
+									</button>
 								</div>
 							</Modal>
 						</>

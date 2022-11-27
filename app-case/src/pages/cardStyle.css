@@ -123,6 +123,10 @@
 	transform: rotateY(180deg);
 }
 
+.topic__card__flipper__rotate {
+	transform: rotateY(180deg);
+}
+
 .topic__card__back__photo {
 	width: 180px;
 	height: 180px;

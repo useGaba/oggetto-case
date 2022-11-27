@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
 import "./cardStyle.css";
+import { useNavigate } from "react-router-dom";
+
 import logo from "../assets/logo.svg";
 // import team from "../assets/team.png";
 // import arrow from "../assets/arrow.png";
@@ -8,32 +10,35 @@ import bublic from "../assets/bublic.png";
 import cone from "../assets/cone.png";
 import cube from "../assets/cube.png";
 import photo1 from "../assets/photo1.png";
-// import photo2 from "../assets/photo2.png";
-// import photo4 from "../assets/photo3.png";
-// import photo5 from "../assets/photo4.png";
 import logoOggetto from "../assets/oggettoSign.png";
 import line_1 from "../assets/decorativeLine.png";
 
 function MainPage() {
+	const navigate = useNavigate();
+	const [rotateCards, setRotateCards] = useState(false);
+
 	return (
 		<div className="page">
 			<header className="header">
 				<div className="logo">
 					<img src={logo} alt="лого" />
 				</div>
-				<div className="header__items">
-					<div className="header__item">Функции</div>
-					<div className="header__item">Преимущества</div>
-					<div className="header__item">Как использовать</div>
-					<div className="header__item">Частые вопросы</div>
-				</div>
+				<button className="topic-btn__go" onClick={() => navigate("/login")}>
+					Входи уже
+				</button>
 			</header>
 			<main className="main">
 				{/* TOPIC GOGA */}
 				<section className="topic">
 					<div className="topic__card__container__1">
 						<div className="topic__card__wrapper__1">
-							<div className="topic__card__flipper">
+							<div
+								className={
+									rotateCards
+										? "topic__card__flipper topic__card__flipper__rotate"
+										: "topic__card__flipper"
+								}
+							>
 								<div className="topic__card__front">
 									<div className="topic__card__front__logo">
 										<img alt="Logo" src={logoOggetto} />
@@ -58,7 +63,13 @@ function MainPage() {
 					</div>
 					<div className="topic__card__container__2">
 						<div className="topic__card__wrapper__2">
-							<div className="topic__card__flipper">
+							<div
+								className={
+									rotateCards
+										? "topic__card__flipper topic__card__flipper__rotate"
+										: "topic__card__flipper"
+								}
+							>
 								<div className="topic__card__front">
 									<div className="topic__card__front__logo">
 										<img alt="Logo" src={logoOggetto} />
@@ -83,7 +94,13 @@ function MainPage() {
 					</div>
 					<div className="topic__card__container__3">
 						<div className="topic__card__wrapper__3">
-							<div className="topic__card__flipper">
+							<div
+								className={
+									rotateCards
+										? "topic__card__flipper topic__card__flipper__rotate"
+										: "topic__card__flipper"
+								}
+							>
 								<div className="topic__card__front">
 									<div className="topic__card__front__logo">
 										<img alt="Logo" src={logoOggetto} />
@@ -108,7 +125,13 @@ function MainPage() {
 					</div>
 					<div className="topic__card__container__4">
 						<div className="topic__card__wrapper__4">
-							<div className="topic__card__flipper">
+							<div
+								className={
+									rotateCards
+										? "topic__card__flipper topic__card__flipper__rotate"
+										: "topic__card__flipper"
+								}
+							>
 								<div className="topic__card__front">
 									<div className="topic__card__front__logo">
 										<img alt="Logo" src={logoOggetto} />
@@ -145,12 +168,23 @@ function MainPage() {
 									великих дел. Удачи!
 								</p>
 							</div>
-							<button className="topic-btn__go">Тыкай сюды</button>
+							<button
+								className="topic-btn__go"
+								onClick={() => navigate("/onboarding")}
+							>
+								Тыкай сюды
+							</button>
 							<div className="btn__container">
-								<button className="topic-btn__change__static-cards">
+								<button
+									className="topic-btn__change__static-cards"
+									onClick={() => setRotateCards(true)}
+								>
 									Раскрыть карты
 								</button>
-								<button className="topic-btn__change_hover_cards">
+								<button
+									className="topic-btn__change_hover_cards"
+									onClick={() => setRotateCards(false)}
+								>
 									Скрыть карты
 								</button>
 							</div>
@@ -163,7 +197,7 @@ function MainPage() {
 							Классный заголовок - потому что Матвей красавчик
 						</h2>
 						<div className="card__items items">
-							<div className="items__card card">
+							<div className="items__card card__">
 								<div className="card__img">
 									<img src={bublic} alt="бублик" />
 								</div>
@@ -176,7 +210,7 @@ function MainPage() {
 									честную обратную связь от руководителя и коллег.
 								</div>
 							</div>
-							<div className="items__card card">
+							<div className="items__card card__">
 								<div className="card__img">
 									<img src={cube} alt="кубик" />
 								</div>
@@ -190,7 +224,7 @@ function MainPage() {
 									слишком простые, чтобы было скучно
 								</div>
 							</div>
-							<div className="items__card card">
+							<div className="items__card card__">
 								<div className="card__img">
 									<img src={cone} alt="конус" />
 								</div>

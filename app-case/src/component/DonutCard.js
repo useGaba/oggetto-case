@@ -30,10 +30,12 @@ const DonutCard = ({ index, slideIndex, amountCards }) => {
 						? "donut__card donut__card__active"
 						: "donut__card donut__card-open"
 				}
-				onClick={openPerson}
-				onMouseMove={(e) => moveCursor(e)}
+				onClick={index === slideIndex ? openPerson : null}
 				onMouseLeave={() => setOnCard(false)}
 			>
+				{index === slideIndex && !isOpen ? (
+					<div className="donut__cursos__flip"></div>
+				) : null}
 				{isOpen ? (
 					<>
 						<div className="donut__card-content card-content">
@@ -85,12 +87,7 @@ const DonutCard = ({ index, slideIndex, amountCards }) => {
 						{/* <div onClick={openPerson} className="donut__card-action">
 									<img src={flip} alt="" />
 								</div> */}
-						{onCard ? (
-							<div
-								className="donut__cursos__flip"
-								style={{ left: `${mouseX}px`, top: `${mouseY}px` }}
-							></div>
-						) : null}
+
 						<img src={oggettoSignTonal} alt="" />
 					</>
 				)}

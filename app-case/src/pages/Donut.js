@@ -6,14 +6,12 @@ import { SamplePrevArrow } from "./../component/SamplePrevArrow";
 
 import check from "../assets/check.png";
 import exit from "../assets/exit.png";
-import oggettoSignTonal from "../assets/oggetto-sign-tonal_sign-tonal.png";
-import prev from "../assets/prev.png";
-import next from "../assets/next.png";
-// import flip from "../assets/flip.png";
+import flip from "../assets/flip.png";
 
 import "./style.css";
 import "./cursorStyle.css";
 import "../css/slider.css";
+import { useNavigate } from "react-router-dom";
 
 function DonutPage() {
 	const [mouseX, setMouseX] = useState(0);
@@ -21,6 +19,7 @@ function DonutPage() {
 	const [onCard, setOnCard] = useState(false);
 	const [slideIndex, setSlideIndex] = useState(0);
 	const [isOpen, setIsOpen] = useState(false);
+	const navigate = useNavigate();
 
 	const amountCards = [1, 2, 3, 4, 5, 6];
 	const settings = {
@@ -36,8 +35,6 @@ function DonutPage() {
 		prevArrow: <SamplePrevArrow />,
 	};
 	const setPositionCard = (index) => {
-		const nextIndex = slideIndex ? slideIndex - 1 : amountCards.length - 1;
-		const prevIndex = amountCards.length - 1 ? 0 : slideIndex + 1;
 		let classNameCard = "";
 
 		if (slideIndex === index) {
@@ -56,10 +53,6 @@ function DonutPage() {
 			classNameCard = "slider__card slider__card__right";
 		}
 		return classNameCard;
-	};
-
-	const openPerson = () => {
-		setIsOpen(true);
 	};
 
 	const moveCursor = (e) => {
@@ -87,7 +80,7 @@ function DonutPage() {
 							<div className="header-donut__text">Раздел 2 - Донат встречи</div>
 						</button>
 					</div>
-					<button className="exit-btn">
+					<button className="exit-btn" onClick={() => navigate("/")}>
 						<img src={exit} alt="" />
 					</button>
 				</div>
@@ -104,6 +97,9 @@ function DonutPage() {
 									className={setPositionCard(index)}
 									style={{ width: "400px" }}
 									key={index}
+									onMouseMove={
+										index === slideIndex ? (e) => moveCursor(e) : null
+									}
 								>
 									<DonutCard
 										index={index}

@@ -13,8 +13,8 @@
 	font-size: 16px;
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
 	gap: 360px;
-	margin-bottom: 40px;
 }
 
 .game {
@@ -69,10 +69,14 @@
 	border-radius: 10px;
 	color: white;
 	font-weight: bold;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .btn__container {
 	width: 40%;
+	margin-top: 20px;
 	display: flex;
 	justify-content: space-between;
 }
@@ -83,6 +87,9 @@
 	background-color: white;
 	border-radius: 10px;
 	color: black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	font-weight: bold;
 }
 
@@ -99,6 +106,9 @@
 .topic-btn__change_hover_cards {
 	width: 200px;
 	height: 70px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	background-color: black;
 	border-radius: 10px;
 	color: white;
@@ -269,7 +279,7 @@
 	align-items: flex-start;
 }
 
-.card {
+.card__ {
 	display: flex;
 	flex-direction: column;
 	gap: 40px;

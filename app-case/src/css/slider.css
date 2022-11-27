@@ -2,13 +2,16 @@
 	margin-top: 200px;
 	width: 75%;
 	height: 100vh;
+	position: relative;
 }
 
 .slider__card {
 	transform: scale(0.8);
 	border-radius: 24px;
+	height: 540px;
 	transition: 0.7s;
 	z-index: 1;
+	position: relative;
 }
 .slider__card__active {
 	transition: 0.7s;
@@ -18,7 +21,6 @@
 	transform: scale(1);
 	width: 80% !important;
 	background-color: #fff;
-	/* cursor: none; */
 	z-index: 100000;
 }
 
