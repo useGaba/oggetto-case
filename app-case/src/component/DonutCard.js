@@ -1,11 +1,4 @@
 import React, { useState } from "react";
-import cn from "classnames";
-import {
-	motion,
-	useMotionValue,
-	useTransform,
-	AnimatePresence,
-} from "framer-motion";
 
 import check from "../assets/check.png";
 import exit from "../assets/exit.png";
