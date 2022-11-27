@@ -65,8 +65,9 @@
 }
 
 .topic__info {
-	width: 40%;
+	width: 50%;
 	color: black;
+	font-size: 24px;
 }
 
 .topic__info p {
