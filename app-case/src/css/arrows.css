@@ -1,0 +1,22 @@
+.arrow {
+	font-size: 30px;
+	padding: 5px 15px;
+	border-radius: 10px;
+	box-shadow: 0 0 5px 3px #ccc;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 30px;
+	position: absolute;
+	top: 200px;
+	z-index: 100;
+	cursor: pointer;
+}
+
+.arrow-right {
+	right: 30px;
+}
+
+.arrow-left {
+	left: 30px;
+}

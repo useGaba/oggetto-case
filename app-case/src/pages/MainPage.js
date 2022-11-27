@@ -2,15 +2,15 @@ import React from "react";
 import "./style.css";
 import "./cardStyle.css";
 import logo from "../assets/logo.svg";
-import team from "../assets/team.png";
-import arrow from "../assets/arrow.png";
+// import team from "../assets/team.png";
+// import arrow from "../assets/arrow.png";
 import bublic from "../assets/bublic.png";
 import cone from "../assets/cone.png";
 import cube from "../assets/cube.png";
 import photo1 from "../assets/photo1.png";
-import photo2 from "../assets/photo2.png";
-import photo4 from "../assets/photo3.png";
-import photo5 from "../assets/photo4.png";
+// import photo2 from "../assets/photo2.png";
+// import photo4 from "../assets/photo3.png";
+// import photo5 from "../assets/photo4.png";
 import logoOggetto from "../assets/oggettoSign.png";
 import line_1 from "../assets/decorativeLine.png";
 
@@ -42,7 +42,7 @@ function MainPage() {
 
 								<div className="topic__card__back">
 									<div className="topic__card__back__photo">
-										<img alt="Photo" src={photo1} />
+										<img alt="Photo123" src={photo1} />
 									</div>
 									<div>
 										<div className="topic__card__back__name">
@@ -67,7 +67,7 @@ function MainPage() {
 
 								<div className="topic__card__back">
 									<div className="topic__card__back__photo">
-										<img alt="Photo" src={photo1} />
+										<img alt="Photo10" src={photo1} />
 									</div>
 									<div>
 										<div className="topic__card__back__name">
@@ -92,7 +92,7 @@ function MainPage() {
 
 								<div className="topic__card__back">
 									<div className="topic__card__back__photo">
-										<img alt="Photo" src={photo1} />
+										<img alt="Photo11" src={photo1} />
 									</div>
 									<div>
 										<div className="topic__card__back__name">
@@ -117,7 +117,7 @@ function MainPage() {
 
 								<div className="topic__card__back">
 									<div className="topic__card__back__photo">
-										<img alt="Photo" src={photo1} />
+										<img alt="Photo12" src={photo1} />
 									</div>
 									<div>
 										<div className="topic__card__back__name">
@@ -208,7 +208,7 @@ function MainPage() {
 					<div className="about__cylinder__1"></div>
 					<div className="about__cylinder__2"></div>
 					<div className="about__line__1">
-						<img src={line_1}></img>
+						<img alt="Line1" src={line_1}></img>
 					</div>
 					<div className="about__line__2"></div>
 				</section>

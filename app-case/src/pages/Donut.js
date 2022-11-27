@@ -1,31 +1,75 @@
 import React, { useState } from "react";
+import Slider from "react-slick";
+import DonutCard from "../component/DonutCard";
+import { SampleNextArrow } from "./../component/SampleNextArrow";
+import { SamplePrevArrow } from "./../component/SamplePrevArrow";
+
 import check from "../assets/check.png";
 import exit from "../assets/exit.png";
 import oggettoSignTonal from "../assets/oggetto-sign-tonal_sign-tonal.png";
 import prev from "../assets/prev.png";
 import next from "../assets/next.png";
-import flip from "../assets/flip.png";
+// import flip from "../assets/flip.png";
 
 import "./style.css";
+import "./cursorStyle.css";
+import "../css/slider.css";
 
 function DonutPage() {
+	const [mouseX, setMouseX] = useState(0);
+	const [mouseY, setMouseY] = useState(0);
+	const [onCard, setOnCard] = useState(false);
+	const [slideIndex, setSlideIndex] = useState(0);
 	const [isOpen, setIsOpen] = useState(false);
+
+	const amountCards = [1, 2, 3, 4, 5, 6];
+	const settings = {
+		// infinite: true,
+		useCSS: true,
+		speed: 500,
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		beforeChange: (current, next) => setSlideIndex(next),
+		centerMode: true,
+		variableWidth: true,
+		nextArrow: <SampleNextArrow />,
+		prevArrow: <SamplePrevArrow />,
+	};
+	const setPositionCard = (index) => {
+		const nextIndex = slideIndex ? slideIndex - 1 : amountCards.length - 1;
+		const prevIndex = amountCards.length - 1 ? 0 : slideIndex + 1;
+		let classNameCard = "";
+
+		if (slideIndex === index) {
+			classNameCard = "slider_card slider__card__active";
+		}
+		if (slideIndex > index) {
+			classNameCard = "slider__card slider__card__left";
+		}
+		if (slideIndex < index) {
+			classNameCard = "slider__card slider__card__right";
+		}
+		if ((index === amountCards.length - 1) & (slideIndex === 0)) {
+			classNameCard = "slider__card slider__card__left";
+		}
+		if ((slideIndex === amountCards.length - 1) & (index === 0)) {
+			classNameCard = "slider__card slider__card__right";
+		}
+		return classNameCard;
+	};
+
 	const openPerson = () => {
 		setIsOpen(true);
 	};
 
 	const moveCursor = (e) => {
-		const mouseY = e.clientY;
-		const mouseX = e.clientX;
-		console.log(mouseX);
-		// console.log(mouseY, mouseX);
-		// const style = {
-		// 	transform: mouseX(mouseX),
-		// };
+		setOnCard(true);
+		setMouseX(e.clientX);
+		setMouseY(e.clientY);
 	};
 
 	return (
-		<div className="donut donut-page" onMouseMove={(e) => moveCursor(e)}>
+		<div className="donut donut-page">
 			<header className="donut-page__header">
 				<div className="donut-page__header header-donut">
 					<div className="header-donut__profile profile">
@@ -48,80 +92,27 @@ function DonutPage() {
 					</button>
 				</div>
 			</header>
-			<div className="donut__content">
-				<div className="donut__cards">
-					<div className="donut__card">
-						<div className="donut__card-action">
-							<img src={prev} alt="" />
-						</div>
-						<img src={oggettoSignTonal} alt="" />
-					</div>
-					<div
-						className={!isOpen ? "donut__card" : "donut__card donut__card-open"}
-					>
-						{isOpen ? (
-							<>
-								<div className="donut__card-content card-content">
-									<div className="card-content__user ">
-										<div className="card-content__img"></div>
-										<div className="card-content__name">Мария Иванова</div>
-									</div>
-									<div className="card-content__info">
-										<span className="card-content__text">Должность: </span>
-										<span className="card-content__data">HR-менеджер</span>
-									</div>
-									<div className="card-content__info">
-										<span className="card-content__text">Уровень: </span>
-										<span className="card-content__data"></span>
-									</div>
-									<div className="card-content__info">
-										<span className="card-content__text">Hard skills: </span>
-										<span className="card-content__data"></span>
-									</div>
-									<div className="card-content__info">
-										<span className="card-content__text">Дата рождения: </span>
-										<span className="card-content__data"></span>
-									</div>
-									<div className="card-content__info">
-										<span className="card-content__text">Хобби: </span>
-										<span className="card-content__data"></span>
-									</div>
-									<div className="card-content__info">
-										<span className="card-content__text">email: </span>
-										<span className="card-content__data"></span>
-									</div>
-									<div className="card-content__info">
-										<span className="card-content__text">Телефон: </span>
-										<span className="card-content__data"></span>
-									</div>
-									<div className="card-content__info">
-										<span className="card-content__text">
-											Локация: Таганрогский офис, Петровская 89
-										</span>
-										<span className="card__data"></span>
-									</div>
-								</div>
-								<a
-									href="https://web.telegram.org"
-									className="card-content__link"
+			{/* <div className="donut__content">
+				<div className="donut__cards"></div>
+			</div> */}
+			<div className="donut__page">
+				<div className="donut__content">
+					<div className="slider">
+						<Slider {...settings}>
+							{amountCards.map((value, index, array) => (
+								<div
+									className={setPositionCard(index)}
+									style={{ width: "400px" }}
+									key={index}
 								>
-									Написать в телеграмм
-								</a>
-							</>
-						) : (
-							<>
-								<div onClick={openPerson} className="donut__card-action">
-									<img src={flip} alt="" />
+									<DonutCard
+										index={index}
+										slideIndex={slideIndex}
+										amountCards={amountCards}
+									/>
 								</div>
-								<img src={oggettoSignTonal} alt="" />
-							</>
-						)}
-					</div>
-					<div className="donut__card">
-						<div className="donut__card-action">
-							<img src={next} alt="" />
-						</div>
-						<img src={oggettoSignTonal} alt="" />
+							))}
+						</Slider>
 					</div>
 				</div>
 			</div>
