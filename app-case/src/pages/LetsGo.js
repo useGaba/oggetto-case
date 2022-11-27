@@ -1,7 +1,8 @@
 import React from "react";
 import "../css/letsgo.css";
 import "../pages/cardStyle.css";
-import photo1 from "../assets/photo1.png";
+import photo5 from "../assets/photo5.png";
+import photo6 from "../assets/photo6.png";
 import logoOggetto from "../assets/oggettoSign.png";
 import line from "../assets/DecorativeLine1.png";
 import figure from "../assets/donutNEW.png";
@@ -22,11 +23,11 @@ export const LetsGo = () => {
 
 						<div className="topic__card__back">
 							<div className="topic__card__back__photo">
-								<img alt="Photo123" src={photo1} />
+								<img alt="Photo123" src={photo5} />
 							</div>
 							<div>
-								<div className="topic__card__back__name">Екатерина Доброва</div>
-								<div className="topic__card__back__info">Web Разработчик</div>
+								<div className="topic__card__back__name">Олеся Мусолькина</div>
+								<div className="topic__card__back__info">Team лидер</div>
 							</div>
 						</div>
 					</div>
@@ -43,11 +44,13 @@ export const LetsGo = () => {
 
 						<div className="topic__card__back">
 							<div className="topic__card__back__photo">
-								<img alt="Photo10" src={photo1} />
+								<img alt="Photo10" src={photo6} />
 							</div>
 							<div>
-								<div className="topic__card__back__name">Екатерина Доброва</div>
-								<div className="topic__card__back__info">Web Разработчик</div>
+								<div className="topic__card__back__name">
+									Виктория Мамонтова
+								</div>
+								<div className="topic__card__back__info">Тестировщик</div>
 							</div>
 						</div>
 					</div>

@@ -5,6 +5,7 @@
 	margin: 0 auto;
 	max-width: 1380px;
 	color: #565656;
+	font-family: "Rubik";
 }
 
 .header {
@@ -196,6 +197,11 @@
 	font-weight: 700;
 	font-size: 36px;
 	max-width: 554px;
+	color: #131313;
+}
+
+.about__title-yellow {
+	color: #ffdf15;
 }
 
 .about__cylinder__1 {
@@ -250,7 +256,10 @@
 .card__title {
 	display: flex;
 	gap: 40px;
+	height: 56px;
 	align-items: center;
+	color: #131313;
+	font-weight: bold;
 }
 
 .card__order {
