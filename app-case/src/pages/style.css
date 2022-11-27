@@ -93,10 +93,6 @@
 	color: white;
 }
 
-.topic-btn__go:active {
-	background-color: #ffde09;
-}
-
 .title {
 	font-weight: 700;
 	font-size: 48px;

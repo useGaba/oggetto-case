@@ -60,7 +60,7 @@ export const LetsGo = () => {
 				<div className="letsgo__title">
 					<span style={{ color: "#000" }}>Okaaay let’s go</span> <br />
 					<span style={{ color: "#000" }}>
-						Поспеши, иначе артефакты достанутся ...
+						Поспеши, иначе весь мерч достанется ...
 					</span>
 				</div>
 				<div className="letsgo__header">СЫНУ МАМИНОЙ ПОДРУГИ</div>

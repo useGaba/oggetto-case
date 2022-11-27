@@ -7,12 +7,16 @@ import pic1 from "../assets/pic1_1.png";
 import pic2 from "../assets/Pic1_2.png";
 import pic3 from "../assets/Pic1_3.png";
 import pic4 from "../assets/Pic1_4.png";
+import profileImg from "../assets/Delovoy_portret__dostatochno_kon.jpg";
 import DonutYES from "../assets/DonutYES.png";
+import girl from "../assets/photo6.png";
 import man from "../assets/man.png";
+
 import manGray from "../assets/man-gray.png";
 import exit from "../assets/exit.png";
 import check from "../assets/check.png";
 import { useNavigate } from "react-router-dom";
+import { useSpring, animated } from "react-spring";
 
 function Onboarding() {
 	const [donuts, setDonuts] = useState(0);
@@ -23,12 +27,19 @@ function Onboarding() {
 	const handleClose = () => setShow(false);
 	// const handleShow = () => setShow(true);
 
+	const props = useSpring({
+		opacity: 1,
+		from: { opacity: 0 },
+	});
+
 	return (
 		<div className="onboarding-page onboarding">
 			<header className="donut-page__header">
 				<div className="donut-page__header header-donut">
 					<div className="header-donut__profile profile">
-						<div className="profile__img"></div>
+						<div className="profile__img">
+							<img src={man} alt="profile"></img>
+						</div>
 						<div className="profile__name">Иван Иванов</div>
 					</div>
 					<div className="header-donut__buttons ">
@@ -65,75 +76,66 @@ function Onboarding() {
 					onClick={donuts !== 4 ? () => setDonuts(donuts + 1) : null}
 				>
 					{donuts === 0 ? (
-						<div className="onboarding__person persone">
-							<div className="persone__img">
-								<img src={man} alt="" />
-							</div>
-							<div className="persone__name">Балабуйко Екатерина</div>
-							<div className="persone__description">
-								Знакомься! Это наш главный ментор. Она будет помогать тебе на
-								ранних этапах работы в проекте, направлять на верные пути
-								решения задач и учить тебя писать только хороший код. В
-								свободное время она обычно играет на рояле, а ещё она любит
-								сухое вино.
-							</div>
-							<div className="onboarding__decor">
-								<img src={pic1} alt="" />
-							</div>
-						</div>
-					) : donuts === 1 ? (
-						<div className="onboarding__person persone">
-							<div className="persone__img">
-								<img src={man} alt="" />
-							</div>
-							<div className="persone__name">Калиткина Анна</div>
-							<div className="persone__description">
-								А это Team Lead – невероятно умный и общительный человек. Она
-								вместе с менеджерами проектов взаимодействует с заказчиками, а
-								также занимается проектированием и созданием архитектуры
-								проектов. Надеемся, однажды ты будешь таким же опытным и
-								самостоятельным
-							</div>
-							<div className="onboarding__decor">
-								<img src={pic2} alt="" />
-							</div>
-						</div>
-					) : donuts === 2 ? (
-						<div className="onboarding__person persone">
-							<div className="persone__img">
-								<img src={man} alt="" />
-							</div>
-							<div className="persone__name">Дмитриев Владимир</div>
-							<div className="persone__description">
-								Молодой парень, а уже главные менеджер проектов. Он является
-								связующим звеном между заказчиками, аналитиками, разработчиками,
-								тестировщиками и остальными людьми, ведущими работу над проектом
-							</div>
-							<div className="onboarding__decor">
-								<img src={pic3} alt="" />
-							</div>
-						</div>
-					) : donuts === 3 ? (
-						<div className="onboarding__person persone">
-							<div className="persone__img">
-								<img src={man} alt="" />
-							</div>
-							<div className="persone__name">Сергеева Ирина</div>
-							<div className="persone__description">
-								Она занимается как подбором новых сотрудников, так и
-								взаимодействием с уже работающими. А ещё она помогает в
-								организации мероприятий (корпоративов, кино-вечеров и многих
-								других).
-							</div>
-							<div className="onboarding__decor">
-								<img src={pic4} alt="" />
-							</div>
-						</div>
-					) : (
-						<>
+						<animated.div style={props}>
 							<div className="onboarding__person persone">
 								<div className="persone__img">
-									<img src={man} alt="" />
+									<img src={girl} alt="" />
+								</div>
+								<div className="persone__name">Балабуйко Екатерина</div>
+								<div className="persone__description">
+									Знакомься! Это наш главный ментор. Она будет помогать тебе на
+									ранних этапах работы в проекте, направлять на верные пути
+									решения задач и учить тебя писать только хороший код. В
+									свободное время она обычно играет на рояле, а ещё она любит
+									сухое вино.
+								</div>
+								<div className="onboarding__decor">
+									<img src={pic1} alt="" />
+								</div>
+							</div>
+						</animated.div>
+					) : donuts === 1 ? (
+						<animated.div style={props}>
+							<div className="onboarding__person persone">
+								<div className="persone__img">
+									<img src={girl} alt="" />
+								</div>
+								<div className="persone__name">Калиткина Анна</div>
+								<div className="persone__description">
+									А это Team Lead – невероятно умный и общительный человек. Она
+									вместе с менеджерами проектов взаимодействует с заказчиками, а
+									также занимается проектированием и созданием архитектуры
+									проектов. Надеемся, однажды ты будешь таким же опытным и
+									самостоятельным
+								</div>
+								<div className="onboarding__decor">
+									<img src={pic2} alt="" />
+								</div>
+							</div>
+						</animated.div>
+					) : donuts === 2 ? (
+						<animated.div style={props}>
+							<div className="onboarding__person persone">
+								<div className="persone__img">
+									<img src={profileImg} alt="" />
+								</div>
+								<div className="persone__name">Дмитриев Владимир</div>
+								<div className="persone__description">
+									Молодой парень, а уже главные менеджер проектов. Он является
+									связующим звеном между заказчиками, аналитиками,
+									разработчиками, тестировщиками и остальными людьми, ведущими
+									работу над проектом
+								</div>
+								<div className="onboarding__decor">
+									<img src={pic3} alt="" />
+								</div>
+							</div>
+						</animated.div>
+					) : donuts === 3 ? (
+						<animated.div style={props}>
+							<div className="onboarding__person persone">
+								<div className="persone__img">
+									<img src={girl} alt="" />
 								</div>
 								<div className="persone__name">Сергеева Ирина</div>
 								<div className="persone__description">
@@ -146,6 +148,26 @@ function Onboarding() {
 									<img src={pic4} alt="" />
 								</div>
 							</div>
+						</animated.div>
+					) : (
+						<>
+							<animated.div style={props}>
+								<div className="onboarding__person persone">
+									<div className="persone__img">
+										<img src={girl} alt="" />
+									</div>
+									<div className="persone__name">Сергеева Ирина</div>
+									<div className="persone__description">
+										Она занимается как подбором новых сотрудников, так и
+										взаимодействием с уже работающими. А ещё она помогает в
+										организации мероприятий (корпоративов, кино-вечеров и многих
+										других).
+									</div>
+									<div className="onboarding__decor">
+										<img src={pic4} alt="" />
+									</div>
+								</div>
+							</animated.div>
 							<Modal
 								style={{
 									width: "360px",

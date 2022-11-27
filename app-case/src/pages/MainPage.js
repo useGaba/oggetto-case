@@ -12,6 +12,7 @@ import photo4 from "../assets/photo4.png";
 import logoOggetto from "../assets/oggettoSign.png";
 import line_1 from "../assets/decorativeLine.png";
 import { LetsGo } from "./LetsGo";
+import Footer from "../component/FooterCustom";
 
 function MainPage() {
 	const navigate = useNavigate();
