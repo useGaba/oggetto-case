@@ -183,49 +183,46 @@ function MainPage() {
 				</section>
 				<section className="about">
 					<div className="about__content">
-						<h2 style={{ width: "333px" }} className="about__title">
-							<span style={{ color: "#FFDF15" }}>Из чего состоит </span>{" "}
-							<span style={{ color: "#000" }}>квест онбординг?</span>
-						</h2>
+						<div className="about__title">
+							<span className="about__title-yellow">Из чего состоит</span>
+							<br />
+							квест онбординг?
+						</div>
 						<div className="card__items items">
 							<div className="items__card card__">
-								<div className="card__img">
-									<img src={bublic} alt="бублик" />
-								</div>
 								<div className="card__title">
 									<div className="card__order">01</div>
-									<div className="card__name">Развитие</div>
+									<div className="card__name">Путешествие</div>
 								</div>
 								<div className="card__text">
-									Новичкам выделяем ментора. Все сотрудники регулярно получают
-									честную обратную связь от руководителя и коллег.
+									Гуляй по виртуальному офису в поисках артефактов. Познакомься
+									с ключевыми сотрудниками, узнай кто и чем тебе будут полезны в
+									работе, и запроси у них артефакт.
 								</div>
 							</div>
 							<div className="items__card card__">
-								<div className="card__img">
-									<img src={cube} alt="кубик" />
-								</div>
 								<div className="card__title">
 									<div className="card__order">02</div>
-									<div className="card__name">Работа</div>
+									<div className="card__name">
+										Cкушай пончик и расскажи о себе
+									</div>
 								</div>
 								<div className="card__text">
-									Удовольствие от работы Задачи сотрудника соотносятся с его
-									уровнем: не слишком сложные, чтобы ставить в тупик, и не
-									слишком простые, чтобы было скучно
+									Во втором этапе тебе необходимо будет поговорить с тремя
+									рандомными членами команды, чтобы получить от них отвёртку,
+									клей, и костыль. Это необходимо для сборки артефакта воедино.
 								</div>
 							</div>
 							<div className="items__card card__">
-								<div className="card__img">
-									<img src={cone} alt="конус" />
-								</div>
 								<div className="card__title">
 									<div className="card__order">03</div>
-									<div className="card__name">Вознаграждения</div>
+									<div className="card__name">
+										Получи награду за собранный артефакт
+									</div>
 								</div>
 								<div className="card__text">
-									Новичкам выделяем ментора. Все сотрудники регулярно получают
-									честную обратную связь от руководителя и коллег.
+									Наши рекрутёры обменяют твой ценный артефакт на невероятно
+									крутой мерч. Ты получишь
 								</div>
 							</div>
 						</div>
