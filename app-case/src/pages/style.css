@@ -26,6 +26,7 @@
 
 /* TOPIC GOGA */
 .topic {
+  font-family: 'Rubik';
 	margin-bottom: 141px;
 }
 
@@ -206,6 +207,18 @@
 	border-radius: 40px;
 }
 
+.about__title{
+  font-family: "Rubik";
+  box-sizing: border-box;
+  font-size: 36px;
+  line-height: 42px;
+  width: 433px;
+
+}
+.about__title-yellow{
+  color: #ffdf15;
+}
+
 .about__content::before {
 	position: absolute;
 	left: 80%;
@@ -282,13 +295,15 @@
 .card__ {
 	display: flex;
 	flex-direction: column;
-	gap: 40px;
+	gap:70px;
+  justify-content: center;
 }
 
 .card__title {
 	display: flex;
-	gap: 20px;
+	gap: 40px;
 	align-items: center;
+  height: 40px;
 }
 
 .card__order {
@@ -299,6 +314,9 @@
 
 .card__name {
 	font-size: 24px;
+  font-family: "Rubik";
+  font-weight: 500;
+  color:#131313;
 }
 
 .card__text {
@@ -385,4 +403,10 @@
 	display: flex;
 	align-items: center;
 	gap: 20px;
+}
+
+
+.next{
+  position: relative;
+  bottom: 0;
 }
