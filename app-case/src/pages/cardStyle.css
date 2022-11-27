@@ -20,8 +20,9 @@
 .topic__card__container__4 {
 	transition: 0.5s linear;
 	position: relative;
-	top: 240px;
-	margin-left: 740px;
+	top: 350px;
+	margin-left: 820px;
+	z-index: 10000;
 }
 
 .topic__card__wrapper__1 {
@@ -65,7 +66,7 @@
 	perspective: 1200;
 	transform-style: preserve-3d;
 	border-radius: 5px;
-	transform: rotate(-7deg);
+	transform: rotate(24deg);
 }
 
 .topic__card__flipper {
@@ -108,7 +109,7 @@
 }
 
 .topic__card__wrapper__1:hover .topic__card__flipper {
-	transform: rotateY(180deg);
+	transform: rotateY(180deg) translateX(-60px);
 }
 
 .topic__card__wrapper__2:hover .topic__card__flipper {

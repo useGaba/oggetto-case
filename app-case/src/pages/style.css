@@ -8,6 +8,7 @@
 }
 
 .header {
+	padding-top: 15px;
 	font-weight: 500px;
 	font-family: "Rubik";
 	font-size: 16px;
@@ -15,6 +16,7 @@
 	align-items: center;
 	justify-content: space-between;
 	gap: 360px;
+	height: 80px;
 }
 
 .game {
@@ -26,7 +28,16 @@
 
 /* TOPIC GOGA */
 .topic {
-	margin-bottom: 141px;
+	margin-bottom: 170px;
+}
+
+.topic__line {
+	position: absolute;
+	width: 1949px;
+	height: 100%;
+	top: 130px;
+	left: -430px;
+	z-index: -111111111111;
 }
 
 .topic__content {
@@ -60,73 +71,24 @@
 .topic__info p {
 	font-weight: bold;
 	line-height: normal;
+	margin-bottom: 36px;
 }
 
 .topic-btn__go {
-	width: 200px;
+	width: 235px;
 	height: 70px;
-	background-color: black;
-	border-radius: 10px;
-	color: white;
+	background-color: rgb(255, 255, 255);
+	border-radius: 5px;
+	color: #131313;
 	font-weight: bold;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-}
-
-.btn__container {
-	width: 40%;
-	margin-top: 20px;
-	display: flex;
-	justify-content: space-between;
-}
-
-.topic-btn__change__static-cards {
-	width: 200px;
-	height: 70px;
-	background-color: white;
-	border-radius: 10px;
-	color: black;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-weight: bold;
-}
-
-.topic-btn__change__static-cards:hover {
-	background-color: black;
-	color: white;
-}
-
-.topic-btn__change__static-cards:active {
-	background-color: #ffe53b;
-	color: black;
-}
-
-.topic-btn__change_hover_cards {
-	width: 200px;
-	height: 70px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: black;
-	border-radius: 10px;
-	color: white;
-	font-weight: bold;
-}
-
-.topic-btn__change_hover_cards:hover {
-	background-color: white;
-	color: black;
-}
-
-.topic-btn__change_hover_cards:active {
-	background-color: #ffe53b;
-	color: black;
 }
 
 .topic-btn__go:hover {
-	background-color: #2a2a2a;
+	background-color: #131313;
+	color: white;
 }
 
 .topic-btn__go:active {

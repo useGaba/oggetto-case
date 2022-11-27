@@ -36,7 +36,11 @@ function Onboarding() {
 							disabled
 							className="header-donut__button header-donut__button-active"
 						>
-							<div className="header-donut__text">Раздел 1 - завершен</div>
+							{donuts !== 4 ? (
+								<div className="header-donut__text">Раздел 1 - онбординг</div>
+							) : (
+								<div className="header-donut__text">Раздел 1 - завершен</div>
+							)}
 							<div className="header-donut__btn-img"></div>
 						</button>
 						<button disabled className="header-donut__button">
@@ -54,11 +58,11 @@ function Onboarding() {
 						<img src={donut} alt=" пончик" />
 					</div>
 					<div className="onboarding__donut__text">X</div>
-					<div className="onboarding__donut__count">{donuts + 1}</div>
+					<div className="onboarding__donut__count">{donuts}</div>
 				</div>
 				<div
 					className="onboarding__container"
-					onClick={() => setDonuts(donuts + 1)}
+					onClick={donuts !== 4 ? () => setDonuts(donuts + 1) : null}
 				>
 					{donuts === 0 ? (
 						<div className="onboarding__person persone">

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./style.css";
 import "./cardStyle.css";
 import { useNavigate } from "react-router-dom";
+import line from "../assets/DecorativeLine1.png";
 
 import logo from "../assets/logo.svg";
 // import team from "../assets/team.png";
@@ -12,6 +13,7 @@ import cube from "../assets/cube.png";
 import photo1 from "../assets/photo1.png";
 import logoOggetto from "../assets/oggettoSign.png";
 import line_1 from "../assets/decorativeLine.png";
+import { LetsGo } from "./LetsGo";
 
 function MainPage() {
 	const navigate = useNavigate();
@@ -30,6 +32,8 @@ function MainPage() {
 			<main className="main">
 				{/* TOPIC GOGA */}
 				<section className="topic">
+					<img className="topic__line" alt="Line1" src={line}></img>
+
 					<div className="topic__card__container__1">
 						<div className="topic__card__wrapper__1">
 							<div
@@ -174,27 +178,14 @@ function MainPage() {
 							>
 								Тыкай сюды
 							</button>
-							<div className="btn__container">
-								<button
-									className="topic-btn__change__static-cards"
-									onClick={() => setRotateCards(true)}
-								>
-									Раскрыть карты
-								</button>
-								<button
-									className="topic-btn__change_hover_cards"
-									onClick={() => setRotateCards(false)}
-								>
-									Скрыть карты
-								</button>
-							</div>
 						</div>
 					</div>
 				</section>
 				<section className="about">
 					<div className="about__content">
-						<h2 className="about__title">
-							Классный заголовок - потому что Матвей красавчик
+						<h2 style={{ width: "333px" }} className="about__title">
+							<span style={{ color: "#FFDF15" }}>Из чего состоит </span>{" "}
+							<span style={{ color: "#000" }}>квест онбординг?</span>
 						</h2>
 						<div className="card__items items">
 							<div className="items__card card__">
@@ -266,6 +257,7 @@ function MainPage() {
 					</div>
 					<button className="game__button">Просто тыкнуть</button>
 				</section>
+				<LetsGo />
 			</main>
 		</div>
 	);
