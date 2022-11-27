@@ -58,6 +58,16 @@ export default class User extends BaseModel {
     description: {
       type: DataTypes.STRING,
     },
+    progress: {
+      type: DataTypes.STRING,
+      defaultValue: 1,
+    },
+    office: {
+      type: DataTypes.STRING,
+    },
+    telegram: {
+      type: DataTypes.STRING,
+    },
   };
 
   static Settings = {
@@ -68,4 +78,15 @@ export default class User extends BaseModel {
       },
     },
   };
+
+  static setupScopes() {
+    this.addScope('data', () => ({
+      attributes: ['id', 'name', 'email',
+        'birthday', 'position', 'grade',
+        'workProject', 'phone', 'hobbies',
+        'hardSkills', 'description', 'progress',
+        'office', 'telegram',
+      ],
+    }));
+  }
 }

@@ -9,4 +9,6 @@ export const registration = yup.object().required().shape({
   grade: yup.string().required(),
   workProject: yup.string().required(),
   phone: yup.string().required(),
+  telegram: yup.string().required(),
+  office: yup.string().required(),
 });

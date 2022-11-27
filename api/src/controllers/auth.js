@@ -2,7 +2,7 @@ import { BadRequest } from 'http-errors';
 
 import { UsersController } from './index';
 import { User } from '../models';
-import { comparePasswords, generateAccessToken } from '../utils';
+import { comparePasswords, generateAccessToken, hashPassword } from '../utils';
 
 async function login({ email, password }) {
   const user = await User.findOneOrFail({ email });
@@ -17,19 +17,27 @@ async function login({ email, password }) {
 }
 
 async function register({
-  email, password, name, birthday, position, grade, workProject, phone,
+  email, password, name, birthday, position, grade, workProject, phone, telegram, office,
 }) {
   let user = await User.findOne({ where: { email } });
   if (user) throw new BadRequest('User already exist');
   user = await UsersController.createUser({
-    email, password, name, birthday, position, grade, workProject, phone,
+    email, password, name, birthday, position, grade, workProject, phone, telegram, office,
   });
   return user;
 }
 
-// TODO make reset password feature
+async function changePassword(user, { currentPassword, password }) {
+  const isPasswordCorrect = await comparePasswords(currentPassword, user.password);
+  if (!isPasswordCorrect) {
+    throw new BadRequest('invalid_password');
+  }
+  user.password = await hashPassword(password);
+  return user.save();
+}
 
 export {
   login,
   register,
+  changePassword,
 };

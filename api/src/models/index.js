@@ -1,7 +1,6 @@
 import { Sequelize } from 'sequelize';
 import { dbConfig } from '../config/sequelize';
-import User from "./User";
-
+import User from './User';
 
 const {
   database, username, password, ...configs
@@ -9,9 +8,10 @@ const {
 const sequelize = new Sequelize(database, username, password, configs);
 
 User.initialize(sequelize);
+User.setupScopes();
 
 export {
   sequelize,
   Sequelize,
-  User
+  User,
 };

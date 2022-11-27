@@ -5,6 +5,7 @@ import { AuthController } from '../controllers';
 import { authenticateToken, validateRequest } from '../middlewares';
 import { roles } from '../constants';
 import { login, registration } from '../requests';
+import { sendMail } from '../services';
 
 const authRouter = Router();
 
@@ -23,7 +24,16 @@ authRouter
     validateRequest(registration),
     wrap(async (req, res) => {
       const user = await AuthController.register(req.body);
+      sendMail(req.body.email, 'registration', req.body);
       res.json(user);
+    }),
+  )
+  .patch(
+    '/password',
+    authenticateToken([roles.user, roles.admin]),
+    wrap(async (req, res) => {
+      await AuthController.changePassword(req.user, req.body);
+      res.status(200).end();
     }),
   );
 
