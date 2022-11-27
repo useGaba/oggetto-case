@@ -21,7 +21,8 @@ function Onboarding() {
 	const navigate = useNavigate();
 
 	const handleClose = () => setShow(false);
-	const handleShow = () => setShow(true);
+	// const handleShow = () => setShow(true);
+
 	return (
 		<div className="onboarding-page onboarding">
 			<header className="donut-page__header">
@@ -172,22 +173,102 @@ function Onboarding() {
 						</>
 					)}
 
-					<div className="onboarding__progress">
-						<ul className="step">
-							<li className="step__item">
-								<div className="step__item-active">
-									<img src={manGray} alt="" />
+					{donuts === 0 ? (
+						<div className="onboarding__progress">
+							<ul className="step">
+								<div className="step__item">
+									<div className="step__item-active">
+										<img src={manGray} alt="" />
+									</div>
 								</div>
-							</li>
-							<li className="step__item">
-								<img src={check} alt="" />
-							</li>
-							<li className="step__item"></li>
-							<img className="last__img" src={check} alt="" />
+								<div className="step__item"></div>
 
-							<div className="last__step__item"></div>
-						</ul>
-					</div>
+								<div className="step__item "></div>
+
+								<div className="step__item step__item-last "></div>
+							</ul>
+						</div>
+					) : null}
+					{donuts === 1 ? (
+						<div className="onboarding__progress">
+							<ul className="step">
+								<div className="step__item">
+									<img src={check} alt="" />
+								</div>
+								<div className="step__item">
+									<div className="step__item-active">
+										<img src={manGray} alt="" />
+									</div>
+								</div>
+
+								<div className="step__item "></div>
+
+								<div className="step__item step__item-last "></div>
+							</ul>
+						</div>
+					) : null}
+					{donuts === 2 ? (
+						<div className="onboarding__progress">
+							<ul className="step">
+								<div className="step__item">
+									<img src={check} alt="" />
+								</div>
+								<div className="step__item">
+									<img src={check} alt="" />
+								</div>
+
+								<div className="step__item ">
+									<div className="step__item-active">
+										<img src={manGray} alt="" />
+									</div>
+								</div>
+
+								<div className="step__item step__item-last "></div>
+							</ul>
+						</div>
+					) : null}
+					{donuts === 3 ? (
+						<div className="onboarding__progress">
+							<ul className="step">
+								<div className="step__item">
+									<img src={check} alt="" />
+								</div>
+								<div className="step__item">
+									<img src={check} alt="" />
+								</div>
+
+								<div className="step__item ">
+									<img src={check} alt="" />
+								</div>
+
+								<div className="step__item step__item-last ">
+									<div className="step__item-active">
+										<img src={manGray} alt="" />
+									</div>
+								</div>
+							</ul>
+						</div>
+					) : null}
+					{donuts === 4 ? (
+						<div className="onboarding__progress">
+							<ul className="step">
+								<div className="step__item">
+									<img src={check} alt="" />
+								</div>
+								<div className="step__item">
+									<img src={check} alt="" />
+								</div>
+
+								<div className="step__item ">
+									<img src={check} alt="" />
+								</div>
+
+								<div className="step__item step__item_-last">
+									<img className="" src={check} alt="" />
+								</div>
+							</ul>
+						</div>
+					) : null}
 				</div>
 			</main>
 		</div>
