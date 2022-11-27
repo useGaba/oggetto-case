@@ -11,13 +11,15 @@ import bublic from "../assets/bublic.png";
 import cone from "../assets/cone.png";
 import cube from "../assets/cube.png";
 import photo1 from "../assets/photo1.png";
+import photo2 from "../assets/photo2.png";
+import photo3 from "../assets/photo3.png";
+import photo4 from "../assets/photo4.png";
 import logoOggetto from "../assets/oggettoSign.png";
 import line_1 from "../assets/decorativeLine.png";
 import { LetsGo } from "./LetsGo";
 
 function MainPage() {
 	const navigate = useNavigate();
-	const [rotateCards, setRotateCards] = useState(false);
 
 	return (
 		<div className="page">
@@ -36,13 +38,7 @@ function MainPage() {
 
 					<div className="topic__card__container__1">
 						<div className="topic__card__wrapper__1">
-							<div
-								className={
-									rotateCards
-										? "topic__card__flipper topic__card__flipper__rotate"
-										: "topic__card__flipper"
-								}
-							>
+							<div className="topic__card__flipper">
 								<div className="topic__card__front">
 									<div className="topic__card__front__logo">
 										<img alt="Logo" src={logoOggetto} />
@@ -67,13 +63,7 @@ function MainPage() {
 					</div>
 					<div className="topic__card__container__2">
 						<div className="topic__card__wrapper__2">
-							<div
-								className={
-									rotateCards
-										? "topic__card__flipper topic__card__flipper__rotate"
-										: "topic__card__flipper"
-								}
-							>
+							<div className="topic__card__flipper">
 								<div className="topic__card__front">
 									<div className="topic__card__front__logo">
 										<img alt="Logo" src={logoOggetto} />
@@ -82,15 +72,13 @@ function MainPage() {
 
 								<div className="topic__card__back">
 									<div className="topic__card__back__photo">
-										<img alt="Photo10" src={photo1} />
+										<img alt="Photo10" src={photo2} />
 									</div>
 									<div>
 										<div className="topic__card__back__name">
 											Екатерина Доброва
 										</div>
-										<div className="topic__card__back__info">
-											Web Разработчик
-										</div>
+										<div className="topic__card__back__info">HR-менеджер</div>
 									</div>
 								</div>
 							</div>
@@ -98,13 +86,7 @@ function MainPage() {
 					</div>
 					<div className="topic__card__container__3">
 						<div className="topic__card__wrapper__3">
-							<div
-								className={
-									rotateCards
-										? "topic__card__flipper topic__card__flipper__rotate"
-										: "topic__card__flipper"
-								}
-							>
+							<div className="topic__card__flipper">
 								<div className="topic__card__front">
 									<div className="topic__card__front__logo">
 										<img alt="Logo" src={logoOggetto} />
@@ -113,15 +95,11 @@ function MainPage() {
 
 								<div className="topic__card__back">
 									<div className="topic__card__back__photo">
-										<img alt="Photo11" src={photo1} />
+										<img alt="Photo11" src={photo3} />
 									</div>
 									<div>
-										<div className="topic__card__back__name">
-											Екатерина Доброва
-										</div>
-										<div className="topic__card__back__info">
-											Web Разработчик
-										</div>
+										<div className="topic__card__back__name">Алена Дубайка</div>
+										<div className="topic__card__back__info">Руководитель</div>
 									</div>
 								</div>
 							</div>
@@ -129,13 +107,7 @@ function MainPage() {
 					</div>
 					<div className="topic__card__container__4">
 						<div className="topic__card__wrapper__4">
-							<div
-								className={
-									rotateCards
-										? "topic__card__flipper topic__card__flipper__rotate"
-										: "topic__card__flipper"
-								}
-							>
+							<div className="topic__card__flipper">
 								<div className="topic__card__front">
 									<div className="topic__card__front__logo">
 										<img alt="Logo" src={logoOggetto} />
@@ -144,15 +116,13 @@ function MainPage() {
 
 								<div className="topic__card__back">
 									<div className="topic__card__back__photo">
-										<img alt="Photo12" src={photo1} />
+										<img alt="Photo12" src={photo4} />
 									</div>
 									<div>
 										<div className="topic__card__back__name">
-											Екатерина Доброва
+											Анастасия Щелкунова
 										</div>
-										<div className="topic__card__back__info">
-											Web Разработчик
-										</div>
+										<div className="topic__card__back__info">Team лидер</div>
 									</div>
 								</div>
 							</div>

@@ -2,6 +2,7 @@
 	width: 100%;
 	height: 982px;
 	position: relative;
+	font-family: "Rubik";
 }
 .letsgo__content {
 	width: 852px;
@@ -24,6 +25,7 @@
 }
 
 .letsgo__header {
+	margin-top: 41px;
 	width: 664px;
 	height: 162px;
 	font-size: 68px;
@@ -32,6 +34,7 @@
 	margin-bottom: 91px;
 }
 .letsgo__container button {
+	margin-top: 50px;
 	width: 235px;
 	height: 70px;
 	background-color: rgb(255, 255, 255);
@@ -41,6 +44,11 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+.letsgo__container button:hover {
+	background-color: #131313;
+	color: white;
 }
 
 .letsgo__figure {

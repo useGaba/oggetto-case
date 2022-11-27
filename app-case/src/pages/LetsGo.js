@@ -5,8 +5,10 @@ import photo1 from "../assets/photo1.png";
 import logoOggetto from "../assets/oggettoSign.png";
 import line from "../assets/DecorativeLine1.png";
 import figure from "../assets/donutNEW.png";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export const LetsGo = () => {
+	const navigate = useNavigate();
 	return (
 		<section className="letsgo__container">
 			<div className="topic__card__container__letsgo__1">
@@ -53,10 +55,13 @@ export const LetsGo = () => {
 			</div>
 			<div className="letsgo__content">
 				<div className="letsgo__title">
-					Okaaay let’s go Поспеши, иначе артефакты достанутся ...
+					<span style={{ color: "#000" }}>Okaaay let’s go</span> <br />
+					<span style={{ color: "#000" }}>
+						Поспеши, иначе артефакты достанутся ...
+					</span>
 				</div>
 				<div className="letsgo__header">СЫНУ МАМИНОЙ ПОДРУГИ</div>
-				<button>Поехали</button>
+				<button onClick={() => navigate("/onboarding")}>Поехали</button>
 			</div>
 			<div className="letsgo__figure"></div>
 
